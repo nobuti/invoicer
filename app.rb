@@ -37,7 +37,11 @@ class App < Sinatra::Base
   helpers SomeHelpers
 
   get '/' do
-    erb :index
+    erb :login
+  end
+
+  get '/test' do
+    erb :test
   end
 
   not_found do

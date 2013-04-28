@@ -33,14 +33,14 @@
   display: block;
   @include box-sizing(border-box);
   @include clearfix;
-  margin: 10px auto;
+  margin: 0 auto;
   position: relative;
 }
 
 %module {
   @include inline-block;
   vertical-align:top;
-  background-color: white;
+  background-color: $white;
   padding: 20px;
   border-right: 2px solid $gray;
   border-bottom: 2px solid $gray;

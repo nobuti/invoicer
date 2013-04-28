@@ -1,0 +1,23 @@
+.bg-white {
+  background-color: $white;
+}
+.bg-gray {
+  background-color: $gray-light;
+}
+.bg-dark {
+  background-color: $gray-dark;
+}
+.left {
+  display: inline;
+  float: left;
+}
+.right {
+  display: inline;
+  float: right;
+}
+.align-right {
+  text-align: right;
+}
+.align-left {
+  text-align: left;
+}

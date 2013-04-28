@@ -1,0 +1,28 @@
+.button {
+  border:none;
+  border-radius: $radius-default;
+  background-color: $gray-darkest;
+  color: $white;
+  padding: 10px 20px;
+  transition: all $duration-fast ease;
+  text-decoration: none;
+  font-size: $smallest-size;
+  text-transform: uppercase;
+  line-height: 1;
+  &.full {
+    width: 100%;
+  }
+  &:hover, &.active {
+    background-color: darken($gray, 20%);
+  }
+}
+
+.button-link {
+  color: $gray-darkest;
+  background-color: transparent;
+  text-decoration: underline;
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+}
