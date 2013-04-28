@@ -1,0 +1,66 @@
+require 'rake-pipeline-web-filters'
+require 'uglifier'
+
+class Rake::Pipeline::DSL::PipelineDSL
+  def production?
+    ENV['RAKEP_MODE'] == 'production'
+  end
+end
+
+# set output path
+output "public/stylesheets"
+
+input "assets/stylesheets" do
+  # convert sass
+  match "style.scss" do
+    scss
+  end
+
+  # minify css
+  match "**/*.css" do
+    yui_css if production?
+    concat "style.css"
+  end
+
+end
+
+# set output path
+output "public/javascripts"
+
+input "assets/javascripts" do
+  # convert coffeescript
+  match "**/*.coffee" do
+    coffee_script
+  end
+
+  # concat and minify javascript
+  match "*.js" do
+    uglify if production?
+    concat "main.js"
+  end
+
+end
+
+# set output path
+output "public"
+
+input "assets/static" do
+  match "**/*" do
+    # The block we pass to `concat` lets us adjust the output path
+    # of any files it matches. Here we take each input and strip
+    # off the `static/` prefix, so `app/static/index.html` ends up
+    # in `public/index.html`.
+    concat do |input|
+      input.sub(/static\//, '')
+    end
+  end
+end
+
+# set output path
+output "public/images"
+
+input "assets/images" do
+  match "**/*" do
+    concat
+  end
+end
