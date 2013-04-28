@@ -1,0 +1,14 @@
+.invoice {
+  padding: 80px 0 0 0;
+  .row {
+    margin-bottom: 40px;
+  }
+  .desglose {
+    .row {
+      margin-bottom: 0;
+    }
+  }
+  p, h1 {
+    margin:0;
+  }
+}

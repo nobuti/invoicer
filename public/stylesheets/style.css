@@ -1262,25 +1262,47 @@ table {
 }
 
 /* line 10, /Volumes/Work/github/invoicer/assets/stylesheets/_helpers.scss */
+.bg-invoice {
+  background-color: #EFF3F5;
+}
+
+/* line 13, /Volumes/Work/github/invoicer/assets/stylesheets/_helpers.scss */
 .left {
   display: inline;
   float: left;
 }
 
-/* line 14, /Volumes/Work/github/invoicer/assets/stylesheets/_helpers.scss */
+/* line 17, /Volumes/Work/github/invoicer/assets/stylesheets/_helpers.scss */
 .right {
   display: inline;
   float: right;
 }
 
-/* line 18, /Volumes/Work/github/invoicer/assets/stylesheets/_helpers.scss */
+/* line 21, /Volumes/Work/github/invoicer/assets/stylesheets/_helpers.scss */
 .align-right {
   text-align: right;
 }
 
-/* line 21, /Volumes/Work/github/invoicer/assets/stylesheets/_helpers.scss */
+/* line 24, /Volumes/Work/github/invoicer/assets/stylesheets/_helpers.scss */
 .align-left {
   text-align: left;
+}
+
+/* line 27, /Volumes/Work/github/invoicer/assets/stylesheets/_helpers.scss */
+.breathing-left {
+  padding-left: 20px;
+}
+
+/* line 30, /Volumes/Work/github/invoicer/assets/stylesheets/_helpers.scss */
+.breathing-right {
+  padding-right: 20px;
+}
+
+/* line 1, /Volumes/Work/github/invoicer/assets/stylesheets/_base.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "museo-sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
 }
 
 /* line 1, /Volumes/Work/github/invoicer/assets/stylesheets/_forms.scss */
@@ -1358,17 +1380,21 @@ table {
   width: 100%;
 }
 /* line 15, /Volumes/Work/github/invoicer/assets/stylesheets/_buttons.scss */
-.button:hover, .button.active {
+.button.active {
+  background-color: #1abc9c;
+}
+/* line 18, /Volumes/Work/github/invoicer/assets/stylesheets/_buttons.scss */
+.button:hover {
   background-color: #999999;
 }
 
-/* line 20, /Volumes/Work/github/invoicer/assets/stylesheets/_buttons.scss */
+/* line 23, /Volumes/Work/github/invoicer/assets/stylesheets/_buttons.scss */
 .button-link {
   color: #2b2b2b;
   background-color: transparent;
   text-decoration: underline;
 }
-/* line 24, /Volumes/Work/github/invoicer/assets/stylesheets/_buttons.scss */
+/* line 27, /Volumes/Work/github/invoicer/assets/stylesheets/_buttons.scss */
 .button-link:hover {
   color: white;
   text-decoration: none;
@@ -1437,12 +1463,13 @@ body {
 }
 
 /* line 49, /Volumes/Work/github/invoicer/assets/stylesheets/_layout.scss */
-span.logo {
+.logo {
   display: inline-block;
   vertical-align: baseline;
   zoom: 1;
   *display: inline;
   *vertical-align: auto;
+  vertical-align: middle;
   text-shadow: 0 0 2px #000;
   border-radius: 2px;
   padding: 2px 10px;
@@ -1455,4 +1482,21 @@ span.logo {
   -ms-transform: rotate(-5deg);
   transform: rotate(-5deg);
   margin: 0 20px;
+}
+
+/* line 1, /Volumes/Work/github/invoicer/assets/stylesheets/_invoice.scss */
+.invoice {
+  padding: 80px 0 0 0;
+}
+/* line 3, /Volumes/Work/github/invoicer/assets/stylesheets/_invoice.scss */
+.invoice .row {
+  margin-bottom: 40px;
+}
+/* line 7, /Volumes/Work/github/invoicer/assets/stylesheets/_invoice.scss */
+.invoice .desglose .row {
+  margin-bottom: 0;
+}
+/* line 11, /Volumes/Work/github/invoicer/assets/stylesheets/_invoice.scss */
+.invoice p, .invoice h1 {
+  margin: 0;
 }

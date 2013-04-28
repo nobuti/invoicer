@@ -12,7 +12,10 @@
   &.full {
     width: 100%;
   }
-  &:hover, &.active {
+  &.active {
+    background-color: $turquise;
+  }
+  &:hover {
     background-color: darken($gray, 20%);
   }
 }

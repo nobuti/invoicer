@@ -33,6 +33,7 @@ class App < Sinatra::Base
     require f
   end
 
+  # use PDFKit::Middleware, {}, :only => [%r[^/invoice]]
   use Rack::MethodOverride
   helpers SomeHelpers
 
@@ -42,6 +43,14 @@ class App < Sinatra::Base
 
   get '/test' do
     erb :test
+  end
+
+  get '/invoice' do
+    erb :invoice
+  end
+
+  get '/nicemondays' do
+    erb :nicemondays
   end
 
   not_found do

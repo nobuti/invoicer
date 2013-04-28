@@ -7,6 +7,9 @@
 .bg-dark {
   background-color: $gray-dark;
 }
+.bg-invoice {
+  background-color: #EFF3F5;
+}
 .left {
   display: inline;
   float: left;
@@ -20,4 +23,10 @@
 }
 .align-left {
   text-align: left;
+}
+.breathing-left {
+  padding-left: 20px;
+}
+.breathing-right {
+  padding-right: 20px;
 }

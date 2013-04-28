@@ -16,7 +16,7 @@
   padding: 10px 20px;
   &:focus {
     outline: none;
-    @include box-shadow(0 0 3px 1px $aqua);
+    box-shadow: 0 0 3px 1px $aqua;
   }
   &.full {
     width: 100%;
