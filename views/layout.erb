@@ -4,13 +4,17 @@
     <title>MakingMoney</title>
     <meta charset="utf-8">
 
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
 
   <%= yield %>
 
-  <script type="text/javascript" src="//use.typekit.net/whf8nab.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <script src="/js/main.js"></script>
+  <script src="//use.typekit.net/whf8nab.js"></script>
+  <script>
+    try{Typekit.load();}catch(e){}
+  </script>
+
   </body>
 </html>

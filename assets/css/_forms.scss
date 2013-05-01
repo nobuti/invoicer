@@ -1,0 +1,39 @@
+.field-group {
+  @include clearfix;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.label-field {
+  display: block;
+}
+.field-text {
+  display: block;
+  border-radius: $radius-default;
+  border:none;
+  background-color: $white;
+  color: darken($gray, 20%);
+  padding: 10px 20px;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 3px 1px $aqua;
+  }
+  &.full {
+    width: 100%;
+  }
+}
+
+.label-field, .field-text {
+  &.inline {
+    @include inline-block;
+    vertical-align: middle;
+  }
+}
+
+.label-field {
+  &.inline {
+    width: 100px;
+    margin-right: 10px;
+    line-height: 1;
+  }
+}

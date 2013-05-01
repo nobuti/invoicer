@@ -1,9 +1,10 @@
-source :rubygems
+source 'https://rubygems.org'
 
 ruby '1.9.3'
 
 gem 'sinatra'
 gem 'thin'
+gem 'rake'
 gem 'net-ssh'
 gem 'sequel'
 gem 'pg'
@@ -13,17 +14,15 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 # gem 'pdfkit', :require => 'pdfkit'
 
 group :development do
+  gem 'guard-sass', :require => false
   gem 'sinatra-reloader'
   gem 'guard-livereload'
+  gem 'guard-coffeescript'
   gem 'rack-livereload'
-  gem 'coffee-script'
-  gem 'yui-compressor'
-  gem 'uglifier'
-  gem 'sass'
-  gem 'compass'
-  gem 'rake-pipeline'
-  gem 'rake-pipeline-web-filters'
+  gem 'guard-sprockets'
   gem 'rb-fsevent', '~> 0.9'
+  gem 'therubyracer'
+  gem 'uglifier'
 end
 
 group :test do

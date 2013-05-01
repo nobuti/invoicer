@@ -1,0 +1,70 @@
+* {
+  @include box-sizing( border-box );
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: $gray-light;
+  color: $gray-darkest;
+  font: 1em/1.5 $museo;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.aside {
+  position: fixed;
+  height: 100%;
+  width: 300px;
+  top: 0;
+  left: -300px;
+  background-color: #000;
+  color: white;
+  &.open {
+    left: 0;
+  }
+}
+.aside, .main {
+  transition: all $duration-fast ease-out;
+}
+.main {
+  position: relative;
+}
+.aside.open + .main {
+  left: 300px;
+}
+
+.block {
+  width: 100%;
+}
+
+.holder {
+  @extend %container;
+  width: 960px;
+  padding: 20px;
+}
+
+.login-box {
+  width: 300px;
+  margin: 200px auto;
+}
+
+.logo {
+  @include inline-block;
+  vertical-align: middle;
+  text-shadow: 0 0 2px #000;
+  border-radius: $radius-default;
+  padding: 2px 10px;
+  font-size: 0.75em;
+  background-color: $gray-darkest;
+  color: white;
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  -o-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+  margin: 0 20px;
+
+}

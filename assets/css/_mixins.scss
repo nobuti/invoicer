@@ -1,0 +1,54 @@
+@mixin museo-regular {
+  font-family: $museo;
+  font-style: normal;
+  font-weight: 300;
+}
+
+@mixin museo-bold {
+  font-family: $museo;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@mixin respond-to($breakpoint) {
+    @media only screen and (max-width: $breakpoint + px) { @content; }
+}
+
+@mixin placeholder($color: white) {
+  ::-webkit-input-placeholder { /* WebKit browsers */
+      color: $color;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color: $color;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color: $color;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10+ */
+      color: $color;
+  }
+}
+
+%container {
+  display: block;
+  @include clearfix;
+  margin: 0 auto;
+  position: relative;
+}
+
+%module {
+  @include inline-block;
+  vertical-align:top;
+  background-color: $white;
+  padding: 20px;
+  border-right: 2px solid $gray;
+  border-bottom: 2px solid $gray;
+}
+
+@mixin fullspace($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  position: absolute;
+  top:$top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+}

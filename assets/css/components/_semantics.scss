@@ -1,0 +1,30 @@
+.whole { width:100%; }
+.half { width:50%; }
+.percent {
+  @for $i from 1 through 20 {
+    &.#{number-to-semantic($i)} {
+      width: semantic-to-percent($i);
+    }
+  }
+}
+
+$columns: (one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve);
+@each $part in $columns {
+  @each $of in $columns {
+    @if (semantic-to-number($part) < semantic-to-number($of)) {
+      .#{$part}-of-#{$of} {
+        width: percent(semantic-to-number($part), semantic-to-number($of));
+      }
+    }
+  }
+}
+
+@each $part in $columns {
+  @each $of in $columns {
+    @if (semantic-to-number($part) < semantic-to-number($of)) {
+      .push-#{$part}-of-#{$of} {
+        margin-left: percent(semantic-to-number($part), semantic-to-number($of));
+      }
+    }
+  }
+}
