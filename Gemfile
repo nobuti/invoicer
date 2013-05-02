@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 
 gem 'sinatra'
+gem 'foreman'
 gem 'thin'
 gem 'rake'
 gem 'net-ssh'
