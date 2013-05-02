@@ -12,7 +12,7 @@ Sequel.migration do
   end
   down do
     alter_table :users do
-      drop_column :id, :cascade=>true
+      drop_column :id, :cascade => true
     end
     drop_table :users
   end

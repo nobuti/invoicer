@@ -1,6 +1,7 @@
 class Invoice < Sequel::Model
   plugin :validation_helpers
   plugin :json_serializer
+
   many_to_one :user
 
   # id_invoice, description, date, base, status, url

@@ -3,7 +3,7 @@ Sequel.migration do
     create_table :drivers do
       primary_key :id
       Integer :user_id, :null => true
-      foreign_key [:user_id], :users, :name => 'fk_drivers_user_id', :on_delete => :set_null
+      foreign_key [:user_id], :users, :name => 'fk_drivers_user_id'
       String :year
       Numeric :invoice
     end

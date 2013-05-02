@@ -1,6 +1,7 @@
 class Setting < Sequel::Model
   plugin :validation_helpers
   plugin :json_serializer
+
   one_to_one :user
 
   # name, nif, address, iva, irpf
