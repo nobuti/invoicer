@@ -1,0 +1,16 @@
+.nav {
+  margin: 0;
+  padding: 0;
+  > li {
+    list-style: none;
+  }
+}
+
+.nav-horizontal {
+  @extend .nav;
+  > li {
+    margin-left: 10px;
+    @include inline-block;
+    vertical-align: middle;
+  }
+}

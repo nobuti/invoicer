@@ -1,0 +1,20 @@
+i {
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  background-color: $turquise;
+  background-repeat: no-repeat;
+  background-position: center center;
+  &.check {
+    background-image: url(/images/check_12x10.png);
+  }
+  &.uncheck {
+    background-color: $gray-dark;
+    background-image: url(/images/check_12x10.png);
+  }
+  &.download {
+    background-image: url(/images/cloud_download_12x12.png);
+  }
+}

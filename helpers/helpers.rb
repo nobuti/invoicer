@@ -22,14 +22,14 @@ module SomeHelpers
     if session[:token]
       return true
     else
-      halt 401, slim(:'401')
+      halt 401, erb(:'401')
       return false
     end
   end
 
   def passing_logged
     if session[:token]
-      redirect '/projects'
+      redirect '/dashboard'
       return true
     end
   end
