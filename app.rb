@@ -8,7 +8,7 @@ class App < Sinatra::Base
   end
 
   configure :test do
-    set :database, Sequel.connect('sqlite://test.db')
+    DataMapper.setup(:default, 'sqlite://test.db')
   end
 
   configure :development do
@@ -19,12 +19,14 @@ class App < Sinatra::Base
     require 'rack-livereload'
     use Rack::LiveReload
 
-    set :database, Sequel.connect('postgres://nobuti:awesome002@localhost/invoices')
+    DataMapper.setup(:default, 'postgres://nobuti:awesome002@localhost/invoices')
   end
 
   Dir[File.join(".", "models/**/*.rb")].each do |f|
     require f
   end
+  DataMapper.finalize
+  DataMapper.auto_upgrade!
 
   Dir[File.join(".", "helpers/**/*.rb")].each do |f|
     require f

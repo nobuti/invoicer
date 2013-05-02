@@ -7,7 +7,10 @@ gem 'foreman'
 gem 'thin'
 gem 'rake'
 gem 'net-ssh'
-gem 'sequel'
+gem 'data_mapper', '~> 1.2'
+gem 'dm-sqlite-adapter'
+gem 'dm-postgres-adapter'
+gem 'sqlite3'
 gem 'pg'
 gem 'json'
 gem 'pony', '~> 1.4'
@@ -27,7 +30,6 @@ group :development do
 end
 
 group :test do
-  gem 'sqlite3'
   gem 'rspec'
   gem 'rack-test', :require => "rack/test"
 end

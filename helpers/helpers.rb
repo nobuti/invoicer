@@ -56,14 +56,10 @@ module SomeHelpers
   end
 
   def script_tag(file_name)
-    path_prefix = development? ? '/assets/' : '/js/'
-    suffix = development? ? '' : ".min"
-    %(<script src="#{path_prefix}#{file_name}#{suffix}.js"></script>)
+    %(<script src="/js/#{file_name}.js"></script>)
   end
-   
+
   def stylesheet_tag(file_name)
-    path_prefix = development? ? '/assets/' : '/css/'
-    suffix = development? ? '' : ".min"
-    %(<link rel="stylesheet" href="#{path_prefix}#{file_name}#{suffix}.css">)
+    %(<link rel="stylesheet" href="/css/#{file_name}.css">)
   end
 end

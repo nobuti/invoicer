@@ -1,9 +1,10 @@
-class Driver < Sequel::Model
-  plugin :validation_helpers
-  plugin :json_serializer
+class Driver
+  include DataMapper::Resource
 
-  one_to_one :user
+  belongs_to :user
 
-  # user, counter, year
+  property :id, Serial
+  property :counter, Integer
+  property :year, String
 
 end
