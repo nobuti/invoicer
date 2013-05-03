@@ -1,0 +1,23 @@
+/*
+
+Highlight
+---------
+
+  <em class="highlight-yellow">This is important</em>
+
+*/
+
+.highlight {
+  font-style: normal;
+  padding: 2px 5px;
+}
+
+.highlight-yellow {
+  @extend .highlight;
+  background-color: #fffdaf;
+}
+
+.highlight-red {
+  @extend .highlight;
+  background-color: #ffa59f;
+}

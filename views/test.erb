@@ -1,6 +1,23 @@
-<div class="aside bg-dark showed">
-  <p>Aside</p>
+<div class="aside open">
+  <h3>Nuevo proyecto</h3>
+  <form action="" method="post">
+    <div class="field-group">
+      <label for="description" class="label-field">Descripción</label>
+      <input type="text" name="description" class="field-text">
+    </div>
+    <div class="field-group">
+      <label class="label-field inline">Cliente</label>
+        <div class="dropdown">
+          <select name="client" id="client">
+            <option value="1">BeBanjo SL</option>
+            <option value="2">Nicemondays SCP</option>
+          </select>
+        </div>
+    </div>
+
+  </form>
 </div>
+
 <div class="main">
   <div class="block bg-white">
     <div class="header">
@@ -13,12 +30,29 @@
     </div>
   </div>
   <div class="block bg-gray">
+    <div class="utilities">
+      <div class="stats">
+        <p><strong>Tus números</strong> <span class="separator">-</span> <span class="highlight-yellow">12560€</span> en 8 proyectos</p>
+      </div>
+      <div class="years">
+        <label class="label-field inline">Select a year:</label>
+        <div class="dropdown year">
+          <select name="locs" id="locs">
+            <option value="2013">2013</option>
+            <option value="2012">2012</option>
+            <option value="2011">2011</option>
+            <option value="2010">2010</option>
+            <option value="2009">2009</option>
+          </select>
+        </div>
+      </div>
+    </div>
     <ul class="invoices">
       <li>
         <div class="description">Consultancy frontend enginering services July</div>
         <div class="details">
           <span>BeBanjo SL</span>
-          <span class="date">30/07/2013</span>
+          <span class="highlight-yellow">30/07/2013</span>
         </div>
         <div class="money">3000 €</div>
         <div class="activity">
@@ -30,7 +64,7 @@
         <div class="description">212 Fresh Summer</div>
         <div class="details">
           <span>Nicemondays SCP</span>
-          <span class="date">28/04/2013</span>
+          <span class="highlight-yellow">28/04/2013</span>
         </div>
         <div class="money">4000 €</div>
         <div class="activity">
@@ -42,7 +76,7 @@
         <div class="description">Consultancy frontend services June</div>
         <div class="details">
           <span>BeBanjo SL</span>
-          <span class="date">30/06/2013</span>
+          <span class="highlight-yellow">30/06/2013</span>
         </div>
         <div class="money">3000 €</div>
         <div class="activity">
@@ -54,7 +88,7 @@
         <div class="description">Consultancy frontend services May</div>
         <div class="details">
           <span>BeBanjo SL</span>
-          <span class="date">30/05/2013</span>
+          <span class="highlight-yellow">30/05/2013</span>
         </div>
         <div class="money">3000 €</div>
         <div class="activity">

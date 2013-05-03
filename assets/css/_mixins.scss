@@ -10,6 +10,12 @@
   font-weight: 700;
 }
 
+@mixin no-appaerance {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
 @mixin respond-to($breakpoint) {
     @media only screen and (max-width: $breakpoint + px) { @content; }
 }

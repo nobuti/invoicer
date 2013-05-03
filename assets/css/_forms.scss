@@ -37,3 +37,98 @@
     line-height: 1;
   }
 }
+
+.dropdown {
+  background: url('/images/select-tip.png') no-repeat calc(100% - 15px) center;
+  background-color: $white;
+  width: 100%;
+  overflow: hidden;
+  padding: 7px 10px;
+  border-radius: $radius-default;
+  cursor: pointer;
+  display: inline-block;
+  select {
+    width: 110%;
+    background: transparent;
+    border: none;
+    @include no-appaerance;
+    outline: none;
+    cursor:pointer;
+    color: $gray-dark;
+    option {
+      font-size: $small-size;
+      width: 90%;
+    }
+  }
+}
+
+input[type='checkbox'], input[type='radio'] {
+  display:none;
+}
+
+input[type='checkbox'] + label, input[type='radio'] + label {
+  position: relative;
+  padding-left: 18px;
+}
+
+input[type='checkbox'] + label {
+  &:before {
+    content:"\00a0";
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: inset 1px 1px 1px #ddd,
+                inset -1px -1px 1px #ddd;
+  }
+}
+input[type='checkbox']:checked + label {
+  &:after {
+    content:"\00a0";
+    display:block;
+    width: 3px;
+    height: 6px;
+    border: solid #777;
+    border-width: 0 2px 2px 0;
+    position:absolute;
+    background:transparent;
+    left: 4px;
+    top: 2px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+  }
+}
+
+input[type='radio'] + label {
+  &:before {
+    content:"\00a0";
+    width: 13px;
+    height: 14px;
+    border-radius: 100%;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: inset 1px 1px 1px #ddd,
+                inset -1px -1px 1px #ddd;
+  }
+
+}
+
+input[type='radio']:checked + label {
+  &:after {
+    display:block;
+    content:"\00a0";
+    width: 6px;
+    height: 6px;
+    background-color: #777;
+    position:absolute;
+    top: 5px;
+    left: 4px;
+    border-radius:100%;
+  }
+}
