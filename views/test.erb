@@ -6,7 +6,7 @@
       <input type="text" name="description" class="field-text">
     </div>
     <div class="field-group">
-      <label class="label-field inline">Cliente</label>
+      <label class="label-field">Cliente</label>
         <div class="dropdown">
           <select name="client" id="client">
             <option value="1">BeBanjo SL</option>
@@ -14,7 +14,31 @@
           </select>
         </div>
     </div>
-
+    <div class="field-group">
+      <div class="row">
+        <div class="column two-of-five">
+          <label for="iva" class="label-field">IVA</label>
+          <input type="text" name="iva" class="field-text">
+        </div>
+        <div class="column two-of-five push-one-of-five">
+          <label for="irpf" class="label-field">IRPF</label>
+          <input type="text" name="irpf" class="field-text">
+        </div>
+      </div>
+    </div>
+    <div class="field-group">
+      <div class="column two-of-five">
+          <label for="base" class="label-field">BASE</label>
+          <input type="text" name="base" class="field-text">
+        </div>
+        <div class="column two-of-five push-one-of-five">
+          <label for="total" class="label-field">TOTAL</label>
+          <input type="text" name="total" class="field-text live" value="2000" disabled>
+        </div>
+    </div>
+    <div class="form-actions">
+      <input type="submit" class="button-big full" value="Guardar">
+    </div>
   </form>
 </div>
 

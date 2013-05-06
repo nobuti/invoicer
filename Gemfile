@@ -15,7 +15,6 @@ gem 'pg'
 gem 'json'
 gem 'pony', '~> 1.4'
 gem 'bcrypt-ruby', :require => 'bcrypt'
-# gem 'pdfkit', :require => 'pdfkit'
 
 group :development do
   gem 'guard-sass', :require => false

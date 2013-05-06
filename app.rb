@@ -32,7 +32,6 @@ class App < Sinatra::Base
     require f
   end
 
-  # use PDFKit::Middleware, {}, :only => [%r[^/invoice]]
   use Rack::MethodOverride
   helpers SomeHelpers
 

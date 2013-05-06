@@ -897,6 +897,9 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 3px 1px #46a1e7; }
   .field-text.full {
     width: 100%; }
+  .field-text.live {
+    background-color: #17a689;
+    color: white; }
 
 .label-field.inline, .field-text.inline {
   display: inline-block;
@@ -989,7 +992,10 @@ input[type='radio']:checked + label:after {
   left: 4px;
   border-radius: 100%; }
 
-.button {
+.form-actions {
+  margin: 20px 0; }
+
+.button, .button-big {
   border: none;
   border-radius: 2px;
   background-color: #2b2b2b;
@@ -1000,12 +1006,16 @@ input[type='radio']:checked + label:after {
   font-size: 0.6em;
   text-transform: uppercase;
   line-height: 1; }
-  .button.full {
+  .button.full, .full.button-big {
     width: 100%; }
-  .button.active {
+  .button.active, .active.button-big {
     background-color: #1abc9c; }
-  .button:hover {
-    background-color: #999999; }
+  .button:hover, .button-big:hover {
+    background-color: #148f77; }
+
+.button-big {
+  padding: 15px 20px;
+  font-size: 0.75em; }
 
 .button-link {
   color: #2b2b2b;

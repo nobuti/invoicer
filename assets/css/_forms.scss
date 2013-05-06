@@ -21,6 +21,10 @@
   &.full {
     width: 100%;
   }
+  &.live {
+    background-color: darken($turquise, 5%);
+    color: white;
+  }
 }
 
 .label-field, .field-text {
@@ -131,4 +135,8 @@ input[type='radio']:checked + label {
     left: 4px;
     border-radius:100%;
   }
+}
+
+.form-actions {
+  margin: 20px 0;
 }

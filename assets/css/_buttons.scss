@@ -16,8 +16,14 @@
     background-color: $turquise;
   }
   &:hover {
-    background-color: darken($gray, 20%);
+    background-color: darken($turquise, 10%);
   }
+}
+
+.button-big {
+  @extend .button;
+  padding: 15px 20px;
+  font-size: $small-size;
 }
 
 .button-link {
