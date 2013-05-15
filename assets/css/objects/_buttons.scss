@@ -1,0 +1,47 @@
+%button {
+  @include transition(all $duration-fast ease);
+  background-color: $gray-darkest;
+  border-radius: $radius-default;
+  border:none;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $smallest-size;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: top;
+  white-space: normal;
+  width: auto;
+}
+
+/* Clear extra space in FF */
+%button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+.button {
+  @extend %button;
+
+  &.big {
+    height: 40px;
+    line-height: 40px;
+  }
+
+  &.full {
+    width: 100%;
+  }
+
+  &.active {
+    background-color: $turquise;
+  }
+
+  &:hover {
+    background-color: darken($turquise, 10%);
+  }
+
+}

@@ -1,5 +1,8 @@
 .whole { width:100%; }
 .half { width:50%; }
+.thirth { width:33.33%; }
+.quarter { width:25%; }
+
 .percent {
   @for $i from 1 through 20 {
     &.#{number-to-semantic($i)} {

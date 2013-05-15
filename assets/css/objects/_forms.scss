@@ -16,7 +16,7 @@
   padding: 10px 20px;
   &:focus {
     outline: none;
-    box-shadow: 0 0 3px 1px $aqua;
+    box-shadow: 0 0 3px 1px $turquise;
   }
   &.full {
     width: 100%;
@@ -51,8 +51,9 @@
   border-radius: $radius-default;
   cursor: pointer;
   display: inline-block;
+  vertical-align: middle;
   select {
-    width: 110%;
+    width: calc(100% + 30px);
     background: transparent;
     border: none;
     @include no-appaerance;

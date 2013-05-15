@@ -1,6 +1,4 @@
-* {
-  @include box-sizing( border-box );
-}
+@import "components/grids";
 
 html, body {
   height: 100%;
@@ -9,11 +7,11 @@ html, body {
 body {
   background-color: $gray-light;
   color: $gray-darkest;
-  font: 1em/1.5 $museo;
+  font: 100%/1.5 $museo;
   margin: 0;
   padding: 0;
-  //position: relative;
 }
+
 .aside {
   position: fixed;
   height: 100%;
@@ -26,9 +24,6 @@ body {
   z-index: 10;
   &.open {
     left: 0;
-  }
-  .field-text {
-    width: 100%;
   }
 }
 .aside, .main {
@@ -145,6 +140,7 @@ body {
 }
 .separator {
   display: inline-block;
+  vertical-align: middle;
   text-indent: -9999px;
   height: 1px;
   width: 20px;

@@ -1,0 +1,21 @@
+@import "globals";
+@import "mixins";
+@import "helpers";
+
+* {
+  @include box-sizing( border-box );
+  outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include museo-bold;
+}
+
+a {
+  text-decoration: none;
+  color: $turquise;
+  @include transition(all $duration ease);
+  &:hover {
+    color: $gray-darkest;
+  }
+}

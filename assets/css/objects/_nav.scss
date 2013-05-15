@@ -1,4 +1,4 @@
-.nav {
+%navigation {
   margin: 0;
   padding: 0;
   > li {
@@ -6,11 +6,18 @@
   }
 }
 
+.nav {
+  @extend %navigation;
+  > li {
+    margin-bottom: 10px;
+  }
+}
+
 .nav-horizontal {
-  @extend .nav;
+  @extend %navigation;
   > li {
     margin-left: 10px;
     @include inline-block;
-    vertical-align: middle;
+    vertical-align: top;
   }
 }

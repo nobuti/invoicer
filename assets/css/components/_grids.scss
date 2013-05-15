@@ -2,15 +2,15 @@
 @import 'mixins';
 @import 'semantics';
 
-$gutter: 0;
+$gutter: 10px;
 $bottom: 20px;
 
 .row {
-  margin:0;
-  padding:0;
-  margin-left:-$gutter;
   @extend %clearfix;
   margin-bottom: $bottom;
+  margin-left:-$gutter;
+  margin:0;
+  padding:0;
   &.full {
   margin-left:0;
   > .column {
@@ -25,9 +25,13 @@ $bottom: 20px;
   }
 }
 
-.column {
+.column, .columns {
+  @extend %border-box;
   float: left;
   padding-left:$gutter;
   vertical-align:top;
-  @extend %border-box;
+  &.alfa {
+    padding-left: 0;
+    padding-right: $gutter;
+  }
 }

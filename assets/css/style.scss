@@ -1,15 +1,7 @@
-@import "components/bourbon/bourbon";
 @import "components/normalize";
-@import "components/grids";
+@import "components/bourbon/bourbon";
 
-@import "globals";
-@import "mixins";
-@import "helpers";
-@import "base";
-@import "forms";
-@import "buttons";
-@import "icons";
-@import "nav";
-@import "highlight";
-@import "layout";
-@import "invoice";
+@import "base/base";
+@import "objects/base";
+@import "layout/layout";
+@import "styles/styles";

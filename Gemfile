@@ -12,7 +12,7 @@ gem 'dm-sqlite-adapter'
 gem 'dm-postgres-adapter'
 gem 'sqlite3'
 gem 'pg'
-gem 'json'
+gem 'json', '~> 1.7.7'
 gem 'pony', '~> 1.4'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
