@@ -508,7 +508,7 @@ i {
     background-image: url(/images/magnifying_glass_12x12.png); }
 
 .invoice {
-  padding: 80px 0 0 0; }
+  padding: 150px 0; }
   .invoice .row {
     margin-bottom: 40px; }
   .invoice .desglose .row {
@@ -535,7 +535,7 @@ i {
   border: none;
   background-color: white;
   color: #999999;
-  padding: 10px 20px; }
+  padding: 10px 10px; }
   .field-text:focus {
     outline: none;
     box-shadow: 0 0 3px 1px #1abc9c; }
@@ -639,6 +639,23 @@ input[type='radio']:checked + label:after {
 
 .form-actions {
   margin: 20px 0; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; }
+
+.flat tr {
+  border-bottom: 1px solid #eaeaed; }
+  .flat tr:last-child {
+    border: none; }
+.flat td {
+  padding: 20px 0;
+  text-align: center; }
+  .flat td:first-child {
+    text-align: left; }
+  .flat td:last-child {
+    text-align: right; }
 
 .column, .columns {
   -webkit-box-sizing: border-box;
@@ -1183,25 +1200,8 @@ body {
 
 /* Invoices */
 .invoices {
-  *zoom: 1; }
-  .invoices:before, .invoices:after {
-    content: " ";
-    display: table; }
-  .invoices:after {
-    clear: both; }
-  .invoices li {
-    float: left;
-    list-style: none;
-    background-color: #f7f7f9;
-    width: 450px;
-    height: 150px;
-    margin: 0 20px 20px 0;
-    padding: 20px;
-    display: inline-block;
-    vertical-align: middle;
-    position: relative; }
-    .invoices li:nth-child(2n) {
-      margin-right: 0; }
+  background-color: #fdfdfd;
+  border-radius: 2px; }
 
 .description, .money {
   font-family: "museo-sans", sans-serif;
@@ -1209,29 +1209,13 @@ body {
   font-weight: 700; }
 
 .description {
-  font-size: 1.5em;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap; }
 
-.details span {
-  display: inline-block;
-  margin-right: 20px; }
-  .details span:last-child {
-    margin-right: 0; }
-.details .highlight-yellow {
-  font-size: 0.75em;
-  font-style: italic; }
-
-.money {
-  font-size: 2.4em; }
-
-.activity {
-  position: absolute;
-  right: 20px;
-  bottom: 30px; }
-  .activity a {
-    margin-left: 10px; }
+.client {
+  color: #bfbfbf;
+  font-size: 0.75em; }
 
 /* Utilities */
 .utilities {

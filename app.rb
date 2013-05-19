@@ -19,6 +19,9 @@ class App < Sinatra::Base
     require 'rack-livereload'
     use Rack::LiveReload
 
+    require 'better_errors'
+    use BetterErrors::Middleware
+
     DataMapper.setup(:default, 'postgres://nobuti:awesome002@localhost/invoicer')
   end
 
@@ -36,11 +39,45 @@ class App < Sinatra::Base
   helpers SomeHelpers
 
   get '/' do
+    passing_logged!
     erb :login
   end
 
-  # Borrowed from https://github.com/raul/jet-pack
+  post '/login' do
+    user = User.first(:email => params[:email])
+    if user
+      if user.password_hash == BCrypt::Engine.hash_secret(params[:password], user.password_salt)
+        session[:token] = user.token
+        "Logged!"
+      else
+        "Wrong password"
+      end
+    else
+      "That user not even exists!"
+    end
+  end
 
+  get '/logout' do
+    session[:token] = nil
+    redirect '/'
+  end
+
+  post '/signup' do
+    user = User.create(params[:user])
+    user.password_salt = BCrypt::Engine.generate_salt
+    user.password_hash = BCrypt::Engine.hash_secret(params[:user][:password], user.password_salt)
+    if user.save
+      session[:user] = user.token
+      "User created sucessfully!"
+    else
+      user.errors.full_messages
+    end
+  end
+
+  get '/dashboard' do
+    "Dashboard"
+  end
+  # Borrowed from https://github.com/raul/jet-pack
   # Catch-all: just tries to find and render a view based on the request path
   get "/*" do
     render_from_request_path(request.path_info)

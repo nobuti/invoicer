@@ -5,11 +5,14 @@ class User
   has n, :invoices
   has 1, :profile
 
+  attr_accessor :password, :password_confirmation
+
   property :id, Serial
   property :email, String, :required => true, :unique => true, :format => :email_address
   property :password_hash, Text
   property :password_salt, Text
   property :token, String
+  property :enabled, Boolean, :default  => false
   property :created_at, Date
 
   validates_presence_of :password

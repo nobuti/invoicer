@@ -18,7 +18,7 @@ module SomeHelpers
     Rack::Csrf.csrf_tag(env)
   end
 
-  def login_required
+  def protected!
     if session[:token]
       return true
     else
@@ -27,7 +27,7 @@ module SomeHelpers
     end
   end
 
-  def passing_logged
+  def passing_logged!
     if session[:token]
       redirect '/dashboard'
       return true

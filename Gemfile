@@ -17,6 +17,8 @@ gem 'pony', '~> 1.4'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
 group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'guard-sass', :require => false
   gem 'sinatra-reloader'
   gem 'guard-livereload'

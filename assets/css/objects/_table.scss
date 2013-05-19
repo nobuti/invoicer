@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.flat {
+  tr {
+    border-bottom: 1px solid darken($gray-lighter, 5%);
+    &:last-child {
+      border: none;
+    }
+  }
+  td {
+    padding: 20px 0;
+    text-align: center;
+    &:first-child {
+      text-align: left;
+    }
+    &:last-child {
+      text-align: right;
+    }
+  }
+}
