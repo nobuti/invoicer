@@ -13,10 +13,7 @@ table {
   }
   td {
     padding: 20px 0;
-    text-align: center;
-    &:first-child {
-      text-align: left;
-    }
+    text-align: left;
     &:last-child {
       text-align: right;
     }

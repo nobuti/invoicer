@@ -42,6 +42,7 @@ input::-moz-focus-inner {
 
   &:hover {
     background-color: darken($turquise, 10%);
+    color: $white;
   }
 
 }
