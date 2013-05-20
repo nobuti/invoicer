@@ -74,6 +74,20 @@ class App < Sinatra::Base
     end
   end
 
+  get '/invoices' do
+  end
+
+  post '/invoice' do
+    invoice = Invoice.create(params[:invoice])
+    if invoice.save
+      content_type 'json'
+      {:invoice => invoice.id}.to_json
+    else
+      content_type 'json'
+      {:error => invoice.errors.full_messages}.to_json
+    end
+  end
+
   get '/dashboard' do
     "Dashboard"
   end

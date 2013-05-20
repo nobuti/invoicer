@@ -698,9 +698,13 @@ table {
     border: none; }
 .flat td {
   padding: 20px 0;
-  text-align: left; }
+  padding-right: 5px;
+  text-align: center; }
+  .flat td:nth-child(1), .flat td:nth-child(2) {
+    text-align: left; }
   .flat td:last-child {
-    text-align: right; }
+    text-align: right;
+    padding-right: 0; }
 
 .column, .columns {
   -webkit-box-sizing: border-box;
@@ -1214,6 +1218,10 @@ body {
 
 .main {
   position: relative; }
+  .main:after {
+    content: '';
+    display: block;
+    height: 40px; }
 
 .aside.open + .main {
   padding-left: 300px; }
@@ -1243,8 +1251,8 @@ body {
     margin-top: 28px;
     float: right; }
 
-/* Invoices */
 .invoices {
+  margin-bottom: 30px !important;
   background-color: #fdfdfd;
   border-radius: 2px; }
 
@@ -1252,6 +1260,9 @@ body {
   font-family: "museo-sans", sans-serif;
   font-style: normal;
   font-weight: 700; }
+
+.money {
+  font-size: 1.5em; }
 
 .description {
   text-overflow: ellipsis;
@@ -1261,6 +1272,13 @@ body {
 .client {
   color: #bfbfbf;
   font-size: 0.75em; }
+
+.invoice {
+  display: inline-block;
+  background-color: #2b2b2b;
+  color: white;
+  font-size: 0.75em;
+  padding: 2px 4px; }
 
 /* Utilities */
 .utilities {

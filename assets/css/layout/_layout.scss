@@ -31,6 +31,11 @@ body {
 }
 .main {
   position: relative;
+  &:after {
+    content: '';
+    display: block;
+    height: 40px;
+  }
 }
 .aside.open + .main {
   padding-left: 300px;
@@ -65,34 +70,17 @@ body {
   }
 }
 
-/* Invoices */
-// .invoices {
-//   @extend .holder;
-//   @include clearfix;
-//   li {
-//     float: left;
-//     list-style: none;
-//     background-color: lighten($gray-light, 3%);
-//     width: 450px;
-//     height: 150px;
-//     margin: 0 20px 20px 0;
-//     padding: 20px;
-//     display: inline-block;
-//     vertical-align: middle;
-//     position: relative;
-//     &:nth-child(2n){
-//       margin-right: 0;
-//     }
-//   }
-// }
-
 .invoices {
   @extend .holder;
+  margin-bottom: 30px !important;
   background-color: lighten($gray-light, 5%);
   border-radius: $radius-default;
 }
 .description, .money {
   @include museo-bold;
+}
+.money {
+  font-size: $big-size;
 }
 .description {
   text-overflow: ellipsis;
@@ -102,6 +90,13 @@ body {
 .client {
   color: darken($gray, 5%);
   font-size: $small-size;
+}
+.invoice {
+  display: inline-block;
+  background-color: $gray-darkest;
+  color: white;
+  font-size: $small-size;
+  padding: 2px 4px;
 }
 
 /* Utilities */
