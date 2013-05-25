@@ -1,0 +1,5 @@
+<% flash_types.select{ |kind| flash.has?(kind) }.each do |kind| %>
+<div class="flash-message <%= kind %>">
+  <%= flash[kind] %>
+</div>
+<% end %>

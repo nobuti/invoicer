@@ -8,7 +8,7 @@ class Profile
   property :id, Serial
   property :name, String
   property :nif, String
-  property :addres, Text
+  property :address, Text
   property :iva, Decimal
   property :irpf, Decimal
 

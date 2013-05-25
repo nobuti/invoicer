@@ -18,11 +18,15 @@ module SomeHelpers
     Rack::Csrf.csrf_tag(env)
   end
 
+  def flash_types
+    [:success, :notice, :warning, :error]
+  end
+
   def protected!
     if session[:token]
       return true
     else
-      halt 401, erb(:'401')
+      redirect '/login'
       return false
     end
   end

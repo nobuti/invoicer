@@ -4,6 +4,7 @@ class User
   has n, :clients
   has n, :invoices
   has 1, :profile
+  has 1, :driver
 
   attr_accessor :password, :password_confirmation
 

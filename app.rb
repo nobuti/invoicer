@@ -36,6 +36,7 @@ class App < Sinatra::Base
   end
 
   use Rack::MethodOverride
+  use Rack::Flash, :sweep => true
   helpers SomeHelpers
 
   get '/' do
@@ -44,21 +45,25 @@ class App < Sinatra::Base
   end
 
   post '/login' do
-    user = User.first(:email => params[:email])
+    user = User.first(:email => params[:email], :enabled => true)
     if user
       if user.password_hash == BCrypt::Engine.hash_secret(params[:password], user.password_salt)
         session[:token] = user.token
-        "Logged!"
+        session[:user] = user.id
+        redirect "/dashboard"
       else
-        "Wrong password"
+        flash[:error] = "Wrong password"
+        redirect "/login"
       end
     else
-      "That user not even exists!"
+      flash[:error] = "That user not even exists!"
+      redirect "/login"
     end
   end
 
   get '/logout' do
     session[:token] = nil
+    session[:id] = nil
     redirect '/'
   end
 
@@ -67,6 +72,12 @@ class App < Sinatra::Base
     user.password_salt = BCrypt::Engine.generate_salt
     user.password_hash = BCrypt::Engine.hash_secret(params[:user][:password], user.password_salt)
     if user.save
+      user.profile = Profile.create(:name => "Jhon Doe", :address => "42th Elm Street", :nif => "12345678A", :iva => 21.0, :irpf => 21.0)
+      user.profile.save
+
+      user.driver = Driver.create(:counter => 1, :year => DateTime.now.strftime("%g"))
+      user.driver.save
+
       session[:user] = user.token
       "User created sucessfully!"
     else
@@ -89,8 +100,23 @@ class App < Sinatra::Base
   end
 
   get '/dashboard' do
-    "Dashboard"
+    protected!
+    user = User.first(:id => session[:user])
+    year = Time.new.year
+    @clientes = user.clients
+    @years = user.invoices.years
+    @invoices = user.invoices.all(:date => Date.parse("#{year}-01-01") .. Date.parse("#{year}-12-31"))
   end
+
+  get '/year/:year' do
+    protected!
+    user = User.first(:id => session[:user])
+    year = params[:year]
+    @clientes = user.clients
+    @years = user.invoices.years
+    @invoices = user.invoices.all(:date => Date.parse("#{year}-01-01") .. Date.parse("#{year}-12-31"))
+  end
+
   # Borrowed from https://github.com/raul/jet-pack
   # Catch-all: just tries to find and render a view based on the request path
   get "/*" do

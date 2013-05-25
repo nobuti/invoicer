@@ -12,8 +12,6 @@ class Invoice
   property :token, String
   property :identifier, String
 
-  # id_invoice, description, date, base, status, url
-
   after :create do
     self.token = SecureRandom.hex
     self.status = 0
@@ -33,7 +31,10 @@ class Invoice
         self.identifier = "##{(counter < 10 ? '0'+counter : counter)}/#{current_year}"
       end
     end
+  end
 
+  def self.years
+    all(:fields => [:date]).map{ |item| item.date.year }.uniq
   end
 
   def generate_token

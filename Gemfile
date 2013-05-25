@@ -15,6 +15,7 @@ gem 'pg'
 gem 'json', '~> 1.7.7'
 gem 'pony', '~> 1.4'
 gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'rack-flash3', :require => 'rack-flash'
 
 group :development do
   gem 'better_errors'
